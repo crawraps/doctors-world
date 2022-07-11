@@ -5,6 +5,7 @@ interface Props extends React.HTMLAttributes<HTMLDivElement> {
   flex?: boolean
   padding?: boolean
   children?: JSX.Element | JSX.Element[]
+  className?: string
 }
 
 export default function Container({
@@ -12,13 +13,19 @@ export default function Container({
   flex = false,
   padding = false,
   children,
+  className,
   ...props
 }: Props): JSX.Element {
   return (
     <div
-      className={`${styles.container} ${fluid ? styles.fluid : ''} ${flex ? styles.flex : ''} ${
-        padding ? styles.padding : ''
-      }`}
+      className={
+        styles.container +
+        ' ' +
+        (fluid ? styles.fluid + ' ' : '') +
+        (flex ? styles.flex + ' ' : '') +
+        (padding ? styles.flex + ' ' : '') +
+        className
+      }
       {...props}
     >
       {children}
