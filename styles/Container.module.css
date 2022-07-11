@@ -56,3 +56,13 @@
     width: 100%;
   }
 }
+
+@media (min-width: 1440px) {
+  .container {
+    width: 1264px;
+  }
+
+  .fluid {
+    width: 100%;
+  }
+}
