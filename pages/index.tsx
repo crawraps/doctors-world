@@ -13,8 +13,9 @@ const Home: NextPage = () => {
         <link rel='icon' href='/favicon.ico' />
       </Head>
 
-      <Container fluid>
-        <h1>Hello</h1>
+      <Container className={styles.container}>
+        <h1>А вдруг СМА?</h1>
+        <h2>Выберете, кто Ваш пациент:</h2>
       </Container>
     </div>
   )
