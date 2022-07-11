@@ -23,7 +23,7 @@ export default function Container({
         ' ' +
         (fluid ? styles.fluid + ' ' : '') +
         (flex ? styles.flex + ' ' : '') +
-        (padding ? styles.flex + ' ' : '') +
+        (padding ? styles.padding + ' ' : '') +
         className
       }
       {...props}
