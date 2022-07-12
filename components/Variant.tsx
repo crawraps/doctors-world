@@ -18,13 +18,23 @@ function Variant({ type, title, image, cards, className = '', ...props }: Props)
   // Calculate if description is open in mobile version
   React.useEffect(() => setIsOpen(patient === type), [type, patient])
 
+  // Variant click handler
+  const dispatch = usePatient().dispatch
+  const onClickHandler = () => {
+    if (isOpen) {
+      dispatch({ type: 'setNull' })
+    } else {
+      dispatch({ type: type === 'adult' ? 'setAdult' : 'setKid' })
+    }
+  }
+
   return (
-    <div className={styles.container + ' ' + className} {...props}>
+    <div className={styles.container + ' ' + className} onClick={onClickHandler} {...props}>
       <h3>{title}</h3>
       <div className={styles.imageContainer}>
         <Image src={image} alt={title} width={300} height={300} />
       </div>
-      <div className={styles.descriptionContainer}>
+      <div className={styles.descriptionContainer + ' ' + (isOpen ? styles.descriptionOpen : '')}>
         {cards.map((text, index) => (
           <div className={styles.card} key={`${type}-card-${index}`}>
             <p>{text}</p>
