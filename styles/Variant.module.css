@@ -1,0 +1,47 @@
+.container {
+  cursor: pointer;
+}
+.container:hover h3 {
+  text-decoration: underline;
+}
+.container:hover .card {
+  box-shadow: 0px 8px 8px rgba(6, 140, 166, 0.5);
+  transition: all 0.2s ease-in;
+}
+.container:hover .imageContainer > span {
+  box-shadow: 0px 8px 8px rgba(6, 140, 166, 0.5);
+  transition: all 0.2s ease-in;
+}
+
+.imageContainer {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+.imageContainer > span {
+  box-shadow: 0px 4px 25px rgba(6, 140, 166, 0.25);
+}
+
+.descriptionContainer {
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  max-height: fit-content;
+  transition: max-height 0.2s ease-in;
+}
+
+.card {
+  background: rgba(255, 255, 255, 0.7);
+  border: 2px solid #068ca6;
+  border-radius: 10px;
+  box-shadow: 0px 4px 4px rgba(6, 140, 166, 0.31);
+  padding: 15px 20px;
+  margin: 12px 0;
+}
+
+@media screen and (max-width: 776px) {
+  .descriptionContainer {
+    max-height: 0px;
+  }
+}
