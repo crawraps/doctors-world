@@ -1,0 +1,122 @@
+.container {
+  display: flex;
+  justify-content: space-between;
+  width: 100px;
+  height: 100px;
+  position: absolute;
+  transition: all 0.2s ease-in;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+.container:hover .imageContainer,
+.container:focus .imageContainer {
+  transform: scale(1.05);
+}
+.container:hover .desc {
+  opacity: 1;
+}
+
+.desc {
+  position: absolute;
+  height: 100px;
+  width: 250px;
+  display: flex;
+  align-items: center;
+  font-family: 'Roboto';
+  color: #223867;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 22px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+
+.imageContainer {
+  width: 100px;
+  height: 100px;
+}
+.imageContainer::after {
+  content: url('../assets/images/plus.svg');
+  position: absolute;
+  background-color: #1a6ea0;
+  width: 41px;
+  height: 41px;
+  border-radius: 50%;
+  top: -10px;
+  left: -10px;
+  box-shadow: 0px 4px 25px rgba(0, 0, 0, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.top .desc {
+  height: 60px;
+  top: -60px;
+  left: -75px;
+  justify-content: center;
+  text-align: center;
+}
+.bottom .desc {
+  height: 60px;
+  top: 110px;
+  left: -75px;
+  justify-content: center;
+  text-align: center;
+}
+.left .desc {
+  left: -280px;
+  text-align: right;
+  justify-content: end;
+}
+.right .desc {
+  left: 130px;
+}
+
+@media screen and (max-width: 1200px) {
+  .desc {
+    font-size: 16px;
+    width: 150px;
+  }
+  .top .desc,
+  .bottom .desc {
+    left: -25px;
+  }
+  .left .desc {
+    left: -210px;
+  }
+  .right .desc {
+    left: 100px;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .container {
+    margin: 10px 0;
+    height: 75px;
+    width: 100%;
+    align-items: center;
+  }
+  .imageContainer {
+    width: 75px;
+    height: 75px;
+    display: flex;
+    align-items: center;
+  }
+  .imageContainer::after {
+    display: none;
+  }
+
+  .container .desc {
+    position: static;
+    opacity: 1;
+    height: 50px;
+    width: 100%;
+    justify-content: flex-start;
+    text-align: start;
+    margin-left: 20px;
+    font-size: 14px;
+  }
+}

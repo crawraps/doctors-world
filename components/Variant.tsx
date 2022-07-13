@@ -26,6 +26,8 @@ function Variant({ type, title, image, cards, className = '', ...props }: Props)
     } else {
       dispatch({ type: type === 'adult' ? 'setAdult' : 'setKid' })
     }
+
+    if (window.innerWidth > 776) setTimeout(() => scrollBy(0, 1000), 10)
   }
 
   return (
